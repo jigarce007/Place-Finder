@@ -62,7 +62,7 @@ npm test -- --coverage # View coverage report
 
 🔧 Setup Instructions
 
-1)git clone https://github.com/your-username/google-places-search.git
+1)git clone https://github.com/jigarce007/Place-Finder.git
 
 2)cd google-places-search
 
