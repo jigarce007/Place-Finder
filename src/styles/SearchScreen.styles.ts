@@ -33,30 +33,36 @@ export const stylis = StyleSheet.create({
         bottom: 10,
         left: 10,
         right: 10,
-        backgroundColor: 'white',
-        padding: 8,
-        borderRadius: 5,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.3,
-        shadowRadius: 5,
-        elevation: 5,
-    },
-    detailsTitle: {
+        borderRadius: 10,
+        overflow: 'hidden',
+        height: 180,
+        zIndex: 2,
+      },
+    imageBackground: {
+        flex: 1,
+        justifyContent: 'flex-end',
+      },
+      
+      imageStyle: {
+        width: '100%',
+        height: '100%',
+      },
+      overlay: {
+        backgroundColor: 'rgba(0, 0, 0, 0.6)', // semi-transparent dark overlay
+        padding: 5,
+      },
+      
+      detailsTitle: {
+        color: '#fff',
+        fontSize: 14,
         fontWeight: 'bold',
-        fontSize: 14,
-        marginBottom: 2,
-    },
-    detailsDescription: {
-        fontSize: 14,
-        color: 'gray',
-    },
-    image: {
-        width: 200,
-        height: 100,
-        borderRadius: 5,
-        marginBottom: 6,
-    },
+      },
+      
+      detailsDescription: {
+        color: '#fff',
+        fontSize: 12,
+        marginTop: 4,
+      },
     clearButton: {
         position: 'absolute',
         right: 7,
