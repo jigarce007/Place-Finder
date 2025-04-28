@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,memo,useCallback } from 'react';
 import { TouchableOpacity, Image, View } from 'react-native';
 import { GooglePlacesAutocomplete, GooglePlaceData, GooglePlaceDetail, GooglePlacesAutocompleteRef } from 'react-native-google-places-autocomplete';
 import { stylis } from '../styles/SearchScreen.styles';
@@ -21,6 +21,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onClear,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
+  const handleFocus = useCallback(() => setIsFocused(true), []);
+  const handleBlur = useCallback(() => setIsFocused(false), []);
 
   return (
     <View>
@@ -35,8 +37,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
         textInputProps={{
           value: searchText,
           onChangeText: onChangeText,
-          onFocus: () => setIsFocused(true),
-          onBlur: () => setIsFocused(false),
+          onFocus: () => handleFocus,
+          onBlur: () => handleBlur,
+          placeholderTextColor: '#999',
+          clearButtonMode: 'never',
         }}
         onPress={onPlaceSelected}
         styles={{

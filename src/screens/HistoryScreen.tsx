@@ -6,6 +6,7 @@ import { clearSearchHistory } from '../services/searchHistoryService';
 import { Place } from '../types/Place';
 import HistoryItem from '../components/HistoryItem';
 import ClearHistoryButton from '../components/ClearHistoryButton';
+import { hstyles } from '../styles/HistoryScreen.styles';
 
 const HistoryScreen: React.FC = ({ navigation }: any) => {
     const [history, setHistory] = useState<Place[]>([]);
@@ -30,8 +31,8 @@ const HistoryScreen: React.FC = ({ navigation }: any) => {
     }
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Search History</Text>
+        <View style={hstyles.container}>
+            <Text style={hstyles.title}>Search History</Text>
             <FlatList
                 data={history}
                 contentContainerStyle={{ paddingBottom: 80 }} 
@@ -45,17 +46,4 @@ const HistoryScreen: React.FC = ({ navigation }: any) => {
     );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 15,
-    paddingTop: 50,
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-});
 export default HistoryScreen;

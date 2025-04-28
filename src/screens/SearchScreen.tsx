@@ -1,13 +1,14 @@
 import React, {useState, useRef, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
-import { View, StyleSheet,Text,Image,TouchableOpacity,ImageBackground } from 'react-native';
-import { GooglePlaceData, GooglePlacesAutocomplete, GooglePlaceDetail,GooglePlacesAutocompleteRef } from 'react-native-google-places-autocomplete';
-import Mapview, { Marker, Region } from 'react-native-maps';
+import { View} from 'react-native';
+import { GooglePlaceData, GooglePlaceDetail,GooglePlacesAutocompleteRef } from 'react-native-google-places-autocomplete';
+import Mapview, {Region } from 'react-native-maps';
 import { stylis } from '../styles/SearchScreen.styles';
 import { loadSearchHistory, saveSearchHistory } from '../services/searchHistoryService'; 
 import SearchBar from '../components/SearchBar';
 import MapViewComponent from '../components/MapViewComponent';
 import PlaceDetailsCard from '../components/PlaceDetailsCard';
+
 
 const apiKey = 'AIzaSyC2xZMs5URAtzyCbTjDZi4HYxaKTOrL6F4';
 let photoUrl;
@@ -32,7 +33,6 @@ const SearchScreen: React.FC = () => {
     const [history, setHistory] = useState<Array<{ name: string; address: string; latitude: number; longitude: number,placeId: string;
         photoUrl?: string; }>>([]);
 
-    // Load history from AsyncStorage only once when the component mounts
     useEffect(() => {
       const loadHistory = async () => {
         const storedHistory = await loadSearchHistory();
@@ -44,7 +44,6 @@ const SearchScreen: React.FC = () => {
     useEffect(() => {
         
         if (selectedPlace) {
-    
           setRegion({
             latitude: selectedPlace.latitude,
             longitude: selectedPlace.longitude,
@@ -56,7 +55,6 @@ const SearchScreen: React.FC = () => {
             address: selectedPlace.address,
             photoUrl: selectedPlace.photoUrl || ''
           });
-    
           if (mapRef.current) {
             mapRef.current.animateToRegion({
               latitude: selectedPlace.latitude,
@@ -66,7 +64,7 @@ const SearchScreen: React.FC = () => {
             }, 1500);  
           }
         }
-      }, [selectedPlace]);// Dependency on route.params to handle place changes
+      }, [selectedPlace]);
 
     const handlePlaceSelection = async (data: GooglePlaceData, details: GooglePlaceDetail | null) => {
         if (!details) return;
@@ -119,7 +117,7 @@ const SearchScreen: React.FC = () => {
                 longitudeDelta: region.longitudeDelta,
             }, 1000);
         }
-    }, [region]);  // This effect runs when the region state is updated
+    }, [region]); 
     
   return (
       <View style={stylis.container}>
@@ -134,7 +132,6 @@ const SearchScreen: React.FC = () => {
         </View>
         <MapViewComponent mapRef={mapRef} region={region} placeDetails={placeDetails} />
           {placeDetails && (
-           
                 <PlaceDetailsCard placeDetails={placeDetails} />
            
 )}
