@@ -1,73 +1,63 @@
-# Place-Finder
+📍 Place Finder
 
-Place Finder is a fully functional mobile application built with React Native (Expo + TypeScript), designed to demonstrate senior-level development skills. The app integrates Google Maps and Google Places API to provide an intuitive location search experience with real-time suggestions and a persistent search history.
+<img src="https://github.com/user-attachments/assets/463fb41b-cea1-4dde-beba-8435cc15d67f" width="300" />
+
+<img src="https://github.com/user-attachments/assets/fa720ad6-92fb-4142-9ccf-84039000d51e" width="300" />
+
+<img src="https://github.com/user-attachments/assets/77e5c5be-bf23-44e9-b22d-e9ada89bd9b2" width="300" />
+
+
+
+Place Finder is a React Native application that allows users to:
+
+	•	Search for places using Google Places API.
+	•	View the selected location on Google Maps.
+	•	Save search history locally using AsyncStorage.
+	•	Navigate between Search and History screens with a clean Bottom Tab Navigator.
 
 🚀 Features
 
-	•	🔍 Google Places Autocomplete
- Real-time place suggestions as you type, powered by the Google Places API.
+	•	Search places in real time using Google Places Autocomplete.
+	•	View selected places on an interactive map.
+	•	Save and view search history locally.
+	•	Smooth bottom tab navigation between Search and History screens.
 
- 	•	🗺️ Interactive Map Integration
-Displays selected location on a map with place name and address.
- 
- 	•	🕘 Search History Management
-Automatically stores all searched places with local persistence using AsyncStorage.
+🛠 Tech Stack
 
-	•	📜 History Selection
-Tap any previously searched place to instantly view it on the map again.
-
-	•	💾 Local Data Persistence
-All history data is saved locally and retained across sessions.
-
-	•	📱 Clean & Responsive UI
-Built with modular components and industry best practices.
-
-	•	✅ Testing & Code Quality
-Includes unit tests, integration tests, and Jest code coverage reports.
-
- 🛠️ Tech Stack
- 
-	•	React Native (Expo, TypeScript)
-	•	Google Maps & Places API
+	•	React Native
 	•	React Navigation
+	•	Google Maps API
+	•	Google Places API
 	•	AsyncStorage
-	•	Axios
-	•	Jest + React Native Testing Library
-
- 📦 Project Structure
-
- /src
+	•	TypeScript
  
- ┣ /components     → Reusable UI elements
+ ⚙️ Setup Instructions
  
- ┣ /screens        → Main screens (Home, Map, History)
+	1.	Clone the repository
+
+ git clone https://github.com/jigarce007/Place-Finder.git
  
- ┣ /services       → API handling (Google Places)
+cd Place-Finder
+
+	2.	Install dependencies
+ npm install
+# or
+yarn install
+
+	3.	Add your Google API Key
  
- ┣ /hooks          → Custom hooks
+	•	Open src/config.ts and replace the placeholder with your actual Google API key:
+ export const GOOGLE_API_KEY = 'your_google_api_key_here';
+
+ •	Make sure you have enabled the following APIs in your Google Cloud Console:
  
- ┣ /utils          → Helpers (storage, formatting)
- 
- ┣ /types          → TypeScript type definitions
- 
- ┣ /tests          → Unit & integration test files
- 
- ┗ App.tsx         → App entry point
+	•	Maps SDK for Android/iOS
+	•	Places API
 
- 🧪 Testing & Coverage
+ 	4.	Run the application
+  📦 Dependencies
 
-npm test               # Run all test cases
+  <img width="630" alt="image" src="https://github.com/user-attachments/assets/15e06eef-e891-430a-b22b-f8a561bfd99f" />
 
-npm test -- --coverage # View coverage report
-
-🔧 Setup Instructions
-
-1)git clone https://github.com/jigarce007/Place-Finder.git
-
-2)cd google-places-search
-
-3)npm install
-
-4)Set up .env file with your Google Maps API key:
-
-5)Start the project: npx expo start
+  🔗 Project Link
+  GitHub Repo: https://github.com/jigarce007/Place-Finder
