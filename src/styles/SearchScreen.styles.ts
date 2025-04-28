@@ -33,23 +33,23 @@ export const stylis = StyleSheet.create({
         bottom: 10,
         left: 10,
         right: 10,
-        borderRadius: 10,
         overflow: 'hidden',
         height: 180,
         zIndex: 2,
       },
     imageBackground: {
         flex: 1,
-        justifyContent: 'flex-end',
+      justifyContent: 'flex-end',
       },
       
       imageStyle: {
         width: '100%',
         height: '100%',
+
       },
       overlay: {
-        backgroundColor: 'rgba(0, 0, 0, 0.6)', // semi-transparent dark overlay
-        padding: 5,
+        backgroundColor: 'rgba(0, 0, 0, 0.6)', 
+        padding: 5
       },
       
       detailsTitle: {
@@ -68,12 +68,12 @@ export const stylis = StyleSheet.create({
         right: 7,
         top: 8,
         padding: 5,
-        zIndex: 1, // Make sure it sits above text input
+        zIndex: 1, 
       },
       
       clearIcon: {
         width: 20,
         height: 20,
-        tintColor: 'gray', // Optional: to make icon match theme
-      },
+        tintColor: 'gray', 
+  }
 });
