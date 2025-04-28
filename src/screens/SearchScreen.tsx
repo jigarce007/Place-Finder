@@ -8,9 +8,7 @@ import { loadSearchHistory, saveSearchHistory } from '../services/searchHistoryS
 import SearchBar from '../components/SearchBar';
 import MapViewComponent from '../components/MapViewComponent';
 import PlaceDetailsCard from '../components/PlaceDetailsCard';
-
-
-const apiKey = 'AIzaSyC2xZMs5URAtzyCbTjDZi4HYxaKTOrL6F4';
+import { GOOGLE_API_KEY } from '../config'; 
 let photoUrl;
 interface ExtendedGooglePlaceDetail extends GooglePlaceDetail {
     photos?: { photo_reference: string }[];
@@ -74,7 +72,7 @@ const SearchScreen: React.FC = () => {
         const photoReference = extendedDetails.photos?.[0]?.photo_reference;
       
         photoUrl = photoReference
-          ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoReference}&key=${apiKey}`
+          ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoReference}&key=${GOOGLE_API_KEY}`
           : '';
       
         const selectedRegion: Region = {
@@ -96,15 +94,15 @@ const SearchScreen: React.FC = () => {
             photoUrl: photoUrl,
         };
       
-        await saveSearchHistory(newPlace); // ✅ Save only unique entries
+        await saveSearchHistory(newPlace); 
         const freshHistory = await loadSearchHistory();
-        setHistory(freshHistory);          // ✅ UI always in sync
+        setHistory(freshHistory);        
     };
     
     const handleClearSearch = () => {
-        googlePlacesRef.current?.clear();             // clears suggestions
-        googlePlacesRef.current?.setAddressText('');  // clears input field
-        setSearchText('');                            // optional, in case you're using it elsewhere
+        googlePlacesRef.current?.clear();            
+        googlePlacesRef.current?.setAddressText('');  
+        setSearchText('');                            
         setPlaceDetails(null);
     }
 
@@ -124,7 +122,7 @@ const SearchScreen: React.FC = () => {
           <View style={stylis.searchContainer}>
           <SearchBar
             googlePlacesRef={googlePlacesRef}
-            searchText={searchText}  // Use state for the search text
+            searchText={searchText} 
             onChangeText={(text) => setSearchText(text)}
             onPlaceSelected={handlePlaceSelection}
             onClear={handleClearSearch}
