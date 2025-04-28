@@ -2,8 +2,7 @@ import React, { useState,memo,useCallback } from 'react';
 import { TouchableOpacity, Image, View } from 'react-native';
 import { GooglePlacesAutocomplete, GooglePlaceData, GooglePlaceDetail, GooglePlacesAutocompleteRef } from 'react-native-google-places-autocomplete';
 import { stylis } from '../styles/SearchScreen.styles';
-
-const apiKey = 'AIzaSyC2xZMs5URAtzyCbTjDZi4HYxaKTOrL6F4';
+import { GOOGLE_API_KEY } from '../config';
 
 interface SearchBarProps {
   googlePlacesRef: React.RefObject<GooglePlacesAutocompleteRef>;
@@ -31,7 +30,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         placeholder="Search for places"
         fetchDetails
         query={{
-          key: apiKey,
+          key: GOOGLE_API_KEY,
           language: 'en',
         }}
         textInputProps={{
