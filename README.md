@@ -1,11 +1,11 @@
 📍 Place Finder
+<div>
+<img src="https://github.com/user-attachments/assets/463fb41b-cea1-4dde-beba-8435cc15d67f" width="250" style="display:inline-block; margin: 5px;"/>
 
-<img src="https://github.com/user-attachments/assets/463fb41b-cea1-4dde-beba-8435cc15d67f" width="300" />
+<img src="https://github.com/user-attachments/assets/fa720ad6-92fb-4142-9ccf-84039000d51e" width="250" style="display:inline-block; margin: 5px;"/>
 
-<img src="https://github.com/user-attachments/assets/fa720ad6-92fb-4142-9ccf-84039000d51e" width="300" />
-
-<img src="https://github.com/user-attachments/assets/77e5c5be-bf23-44e9-b22d-e9ada89bd9b2" width="300" />
-
+<img src="https://github.com/user-attachments/assets/77e5c5be-bf23-44e9-b22d-e9ada89bd9b2" width="250" style="display:inline-block; margin: 5px;"/>
+</div>
 
 
 Place Finder is a React Native application that allows users to:
